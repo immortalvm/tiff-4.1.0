@@ -2,7 +2,7 @@
 # Configuration validation subroutine script.
 #   Copyright 1992-2014 Free Software Foundation, Inc.
 
-timestamp='2014-12-03'
+timestamp='2020-04-02'
 
 # This file is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -316,6 +316,7 @@ case $basic_machine in
 	| visium \
 	| we32k \
 	| x86 | xc16x | xstormy16 | xtensa \
+	| ivm64 \
 	| z8k | z80)
 		basic_machine=$basic_machine-unknown
 		;;

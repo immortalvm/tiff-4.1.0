@@ -154,7 +154,8 @@ _tiffSizeProc(thandle_t fd)
 		return((uint64)sb.st_size);
 }
 
-#ifdef HAVE_MMAP
+/* #ifdef HAVE_MMAP */
+#if 0 /* ivm64 doesn't have mmap */
 #include <sys/mman.h>
 
 static int

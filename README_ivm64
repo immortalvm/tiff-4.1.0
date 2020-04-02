@@ -1,0 +1,10 @@
+Run configure like this:
+
+	CC=ivm64-gcc ./configure --host ivm64 --prefix=<some path>
+
+To run the tests do this:
+
+	make check
+
+On ivm64 only one test in the test suite passes (testtypes); all the
+other tests fail. File operations not being supported is one reason.
