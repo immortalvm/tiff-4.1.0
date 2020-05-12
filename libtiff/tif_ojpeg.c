@@ -147,9 +147,15 @@
  */
 
 /* define LIBJPEG_ENCAP_EXTERNAL */
+#ifndef __ivm64__
 #define SETJMP(jbuf) setjmp(jbuf)
 #define LONGJMP(jbuf,code) longjmp(jbuf,code)
 #define JMP_BUF jmp_buf
+#else
+#define SETJMP(jbuf) 1
+#define LONGJMP(jbuf,code) 1
+#define JMP_BUF void*
+#endif
 #define OJPEG_BUFFER 2048
 /* define EGYPTIANWALK */
 

@@ -115,9 +115,16 @@ int TIFFJPEGIsFullStripRequired_12(TIFF* tif);
  * On some machines it may be worthwhile to use _setjmp or sigsetjmp
  * in place of plain setjmp.  These macros will make it easier.
  */
+#ifdef __ivm64__
+#warning "Setjump and company not supproted yet.."
+#define SETJMP(jbuf)		1
+#define LONGJMP(jbuf,code)	1
+#define JMP_BUF			    void*
+#else
 #define SETJMP(jbuf)		setjmp(jbuf)
 #define LONGJMP(jbuf,code)	longjmp(jbuf,code)
 #define JMP_BUF			jmp_buf
+#endif
 
 typedef struct jpeg_destination_mgr jpeg_destination_mgr;
 typedef struct jpeg_source_mgr jpeg_source_mgr;
